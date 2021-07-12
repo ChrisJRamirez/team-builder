@@ -16,7 +16,7 @@ const teamMembers = [
 ]
 
 function App() {
-  const [teamMembers, setTeamMembers] = useState([])
+  const [newTeamMembers, setNewTeamMembers] = useState(teamMembers)
 
   const [formValues, setFormValues] = useState(initialFormValues)
 
@@ -35,7 +35,7 @@ function App() {
       return
     }
     
-    setTeamMembers([...teamMembers,newTeamMem])
+    setNewTeamMembers([...newTeamMembers,newTeamMem])
     setFormValues(initialFormValues)
       
 
@@ -53,7 +53,6 @@ function App() {
         submit={submitForm}  
         />
         
-
          {
 
          }
