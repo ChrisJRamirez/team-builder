@@ -1,6 +1,7 @@
 import './App.css';
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Form from './Form'
+import Team from './Team'
 
 const initialFormValues = {
   name: "",
@@ -8,9 +9,14 @@ const initialFormValues = {
   role: "",
 }
 
+const teamMembers = [
+  {name: "Chris", email: "chris@chris.com", role: "Frontend Engineer"},
+  {name: "Shariq", email: "shariq@shariqdagoat.com", role: "Project Manager"},
+  {name: "Goat", email: "goat@goat.com", role: "Backend Engineer"},
+]
 
 function App() {
-  const [team, setTeam] = useState([])
+  const [teamMembers, setTeamMembers] = useState([])
 
   const [formValues, setFormValues] = useState(initialFormValues)
 
@@ -28,20 +34,30 @@ function App() {
     if (!newTeamMem.name || !newTeamMem.email || !newTeamMem.role) {
       return
     }
+    
+    setTeamMembers([...teamMembers,newTeamMem])
+    setFormValues(initialFormValues)
+      
+
   }
+
 
   return (
     <div className="container">
       <header className="container-header">
         <h1>Team Members</h1>
-
+      </header>
         <Form
         value={formValues}
         update={updateForm}
         submit={submitForm}  
         />
         
-      </header>
+
+         {
+
+         }
+     
     </div>
   );
 }
