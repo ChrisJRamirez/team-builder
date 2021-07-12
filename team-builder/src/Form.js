@@ -28,7 +28,8 @@ export default function Form(props){
             maxLength="30"
           />
         </label>
-
+        <br></br>
+        <br></br>
         <label> Email
           <input
           type="text"
@@ -39,7 +40,8 @@ export default function Form(props){
           maxLength="50"
           />
         </label>
-
+        <br></br>
+        <br></br>
         <label>Role
           <select name="role" value={values.role} onChange={onChange}>
             <option value="">--- Select Role ---</option>
@@ -49,7 +51,8 @@ export default function Form(props){
             <option value="project manager">Project Manager</option>
           </select>
         </label>
-
+        <br></br>
+        <br></br>
         <div classname="submit">
           <button disabled={!values.name || !values.email || !values.role}>Submit</button>
         </div>

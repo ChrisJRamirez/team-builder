@@ -48,13 +48,17 @@ function App() {
         <h1>Team Members</h1>
       </header>
         <Form
-        value={formValues}
+        values={formValues}
         update={updateForm}
         submit={submitForm}  
         />
         
          {
-
+           newTeamMembers.map(member => {
+             return (
+               <Team key={member.id} details={member}/>
+             )
+           })
          }
      
     </div>
